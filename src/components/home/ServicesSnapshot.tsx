@@ -78,7 +78,7 @@ export default function ServicesSnapshot() {
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#0A1F44] rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">
@@ -101,7 +101,7 @@ export default function ServicesSnapshot() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 hover:-translate-y-2"
+              className="group relative bg-white rounded-2xl shadow-lg   transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20  "
             >
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">

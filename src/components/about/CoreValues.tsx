@@ -54,17 +54,13 @@ export default function CoreValues() {
     return (
         <section className="py-20 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M40 40c0-22.091-17.909-40-40-40v80c22.091 0 40-17.909 40-40z'/%3E%3C/g%3E%3C/svg%3E")`,
-                }} />
-            </div>
+         
 
             {/* Floating elements */}
             <div className="absolute top-10 left-10 w-32 h-32 bg-[#8B0000]/10 rounded-full blur-2xl animate-pulse" />
             <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#0A1F44]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-            <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="container mx-auto px-6 relative">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">
@@ -149,12 +145,7 @@ export default function CoreValues() {
                 {/* Achievements Section */}
                 <div className="relative">
                     <div className="bg-gradient-to-r from-[#0A1F44] to-[#8B0000] rounded-3xl p-12 md:p-16 text-white relative overflow-hidden shadow-2xl">
-                        {/* Background Pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                            <div className="absolute inset-0" style={{
-                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
-                            }} />
-                        </div>
+              
 
                         <div className="relative">
                             {/* Header */}

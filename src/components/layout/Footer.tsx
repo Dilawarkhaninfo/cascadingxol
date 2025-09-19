@@ -64,7 +64,7 @@ export function Footer() {
     return (
         <footer className="relative bg-gradient-to-b from-gray-50 to-white border-t border-gray-200">
             {/* Main Footer Content */}
-            <div className="mx-auto max-w-7xl px-6 pt-16 pb-8">
+            <div className="mx-auto container px-6 pt-16 pb-8">
                 <div className="grid gap-12 lg:grid-cols-12">
                     {/* Company Info - 4 columns */}
                     <div className="lg:col-span-4 space-y-6">
@@ -256,7 +256,7 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-gray-200 bg-white/50">
-                <div className="mx-auto max-w-7xl px-6 py-4">
+                <div className="mx-auto container px-6 py-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                         <p className="text-sm text-gray-500">
                             © {new Date().getFullYear()} CascadingXol. All rights reserved. Built with ❤️ in Pakistan.

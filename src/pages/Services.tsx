@@ -75,7 +75,7 @@ export default function Services() {
                 </div>
 
                 {/* Hero Content */}
-                <div className="max-w-7xl mx-auto px-6 relative">
+                <div className="container mx-auto px-6 relative">
                     <div className="text-center mb-12">
                         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
                             <Star className="h-5 w-5 text-white/80" />
@@ -134,7 +134,7 @@ export default function Services() {
                     <div className="absolute bottom-20 right-20 w-72 h-72 bg-[#0A1F44] rounded-full blur-3xl" />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative">
+                <div className="container mx-auto px-6 relative">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">
                             Our Service Portfolio
@@ -160,7 +160,7 @@ export default function Services() {
 
             {/* Our Process */}
             <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">
                             Our Proven Process
@@ -204,7 +204,7 @@ export default function Services() {
 
             {/* Why Choose Us */}
             <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <div>
@@ -260,7 +260,7 @@ export default function Services() {
 
             {/* Client Testimonials */}
             <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">
                             What Our Clients Say
@@ -301,12 +301,7 @@ export default function Services() {
 
             {/* CTA Section */}
             <section className="py-20 bg-gradient-to-r from-[#0A1F44] to-[#8B0000] relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
-                    }} />
-                </div>
+             
 
                 <div className="max-w-4xl mx-auto px-6 text-center relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

@@ -47,7 +47,7 @@ export default function OurStory() {
                 }} />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="container mx-auto px-6 relative">
                 {/* Hero Section */}
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                     {/* Left Content */}

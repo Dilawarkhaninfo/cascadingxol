@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
         }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="container mx-auto px-6 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">
@@ -128,11 +128,7 @@ export default function WhyChooseUs() {
           {/* Background Card */}
           <div className="bg-gradient-to-r from-[#0A1F44] to-[#8B0000] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
-              }} />
-            </div>
+          
 
             <div className="relative">
               {/* Header */}

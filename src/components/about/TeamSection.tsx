@@ -67,7 +67,7 @@ export default function TeamSection() {
                 <div className="absolute bottom-20 right-20 w-72 h-72 bg-[#0A1F44] rounded-full blur-3xl" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="container mx-auto px-6 relative">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">
@@ -107,7 +107,7 @@ export default function TeamSection() {
                     {team.map((member, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 hover:-translate-y-3"
+                            className="group relative bg-white rounded-3xl shadow-xl   transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20  "
                         >
                             {/* Profile Image Section */}
                             <div className="relative h-80 overflow-hidden">

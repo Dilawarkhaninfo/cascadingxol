@@ -69,7 +69,7 @@ export default function Portfolio() {
                     }} />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative">
+                <div className="container mx-auto px-6 relative">
                     <div className="text-center">
                         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
                             <Award className="h-5 w-5 text-white/80" />
@@ -122,7 +122,7 @@ export default function Portfolio() {
                     <div className="absolute bottom-20 right-20 w-72 h-72 bg-[#0A1F44] rounded-full blur-3xl" />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative">
+                <div className="container mx-auto px-6 relative">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">
                             Industries We Transform
@@ -169,7 +169,7 @@ export default function Portfolio() {
 
             {/* Featured Projects */}
             <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">Featured Projects</h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -192,11 +192,7 @@ export default function Portfolio() {
 
                     {/* Case Study Highlights */}
                     <div className="bg-gradient-to-r from-[#0A1F44] to-[#8B0000] rounded-3xl p-12 text-white relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-10">
-                            <div className="absolute inset-0" style={{
-                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
-                            }} />
-                        </div>
+                     
 
                         <div className="relative">
                             <div className="text-center mb-12">
@@ -220,7 +216,7 @@ export default function Portfolio() {
 
             {/* Testimonials */}
             <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0A1F44] mb-6">Client Success Stories</h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">

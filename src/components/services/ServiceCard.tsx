@@ -41,7 +41,7 @@ export default function ServiceCard({ icon: Icon, title, desc, extra }: ServiceC
     const gradient = serviceGradients[title] || "from-gray-500 to-gray-600"
     
     return (
-        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 hover:-translate-y-3">
+        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 ">
             {/* Image Section */}
             <div className="relative h-48 overflow-hidden">
                 <img 

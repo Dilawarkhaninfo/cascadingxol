@@ -38,7 +38,7 @@ export function Header() {
             ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg'
             : 'bg-white border-b border-gray-100'
             }`}>
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div className="mx-auto flex container items-center justify-between px-6 py-4">
                 {/* Logo */}
                 <Link
                     to="/"

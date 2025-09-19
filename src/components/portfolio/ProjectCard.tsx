@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, desc, image, technologies = [], results = [] }: ProjectCardProps) {
     return (
-        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 hover:-translate-y-3">
+        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20  ">
             {/* Project Image */}
             <div className="relative h-64 overflow-hidden">
                 <img 

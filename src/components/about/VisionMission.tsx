@@ -50,7 +50,7 @@ export default function VisionMission() {
             <div className="absolute top-20 left-20 w-40 h-40 bg-[#8B0000]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-20 right-20 w-56 h-56 bg-[#0A1F44]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
 
-            <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="container mx-auto px-6 relative">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">

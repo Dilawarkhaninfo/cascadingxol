@@ -38,7 +38,7 @@ export default function Contact() {
                     }} />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative">
+                <div className="container mx-auto px-6 relative">
                     <div className="text-center">
                         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
                             <Sparkles className="h-5 w-5 text-white/80" />
@@ -75,7 +75,7 @@ export default function Contact() {
 
             {/* Main Content */}
             <main className="flex-1 py-20 bg-gradient-to-b from-white to-gray-50/50">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         {/* Left Column - Contact Info */}
                         <div className="space-y-12">
@@ -129,11 +129,7 @@ export default function Contact() {
 
             {/* Map/Location Section */}
             <section className="py-20 bg-gradient-to-r from-[#0A1F44] to-[#8B0000] relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
-                    }} />
-                </div>
+              
 
                 <div className="max-w-4xl mx-auto px-6 text-center relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

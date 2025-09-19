@@ -50,7 +50,7 @@ export default function ClientPromise() {
             <div className="absolute top-20 left-20 w-32 h-32 bg-[#8B0000]/10 rounded-full blur-2xl animate-pulse" />
             <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0A1F44]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-            <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="container mx-auto px-6 relative">
                 {/* Main Promise Statement */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-8">
@@ -145,11 +145,7 @@ export default function ClientPromise() {
                 <div className="text-center">
                     <div className="inline-block bg-gradient-to-r from-[#0A1F44] to-[#8B0000] rounded-3xl p-12 text-white relative overflow-hidden shadow-2xl">
                         {/* Background Pattern */}
-                        <div className="absolute inset-0 opacity-10">
-                            <div className="absolute inset-0" style={{
-                                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='5' cy='5' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                            }} />
-                        </div>
+                    
 
                         <div className="relative max-w-2xl mx-auto">
                             <h3 className="text-3xl md:text-4xl font-bold mb-6">
