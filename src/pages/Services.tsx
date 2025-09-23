@@ -1,4 +1,5 @@
 import ServiceCard from "@/components/services/ServiceCard"
+import ServicesHeroSection from "@/components/services/ServicesHeroSection"
 import { services } from "@/data/services"
 import { CheckCircle, ArrowRight, Star, Users, Clock, Shield, Zap } from "lucide-react"
 
@@ -65,67 +66,10 @@ const testimonials = [
 export default function Services() {
     return (
         <div className="flex flex-col">
-            {/* Hero Section */}
-            <section className="relative py-20 bg-gradient-to-br from-[#0A1F44] via-[#0A1F44]/90 to-[#8B0000] text-white overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='5' cy='5' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }} />
-                </div>
+            
+            <ServicesHeroSection />
 
-                {/* Hero Content */}
-                <div className="container mx-auto px-6 relative">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
-                            <Star className="h-5 w-5 text-white/80" />
-                            <span className="text-sm font-semibold text-white/90">Premium Services</span>
-                        </div>
-
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            Complete Digital
-                            <span className="text-transparent bg-gradient-to-r from-white to-red-200 bg-clip-text"> Solutions</span>
-                        </h1>
-
-                        <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-8">
-                            From web development to AI automation - we provide end-to-end technology services
-                            that transform businesses and drive sustainable growth.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="inline-flex items-center px-8 py-4 bg-white text-[#0A1F44] rounded-full font-bold hover:bg-gray-100 transition-all duration-300 group shadow-xl hover:shadow-2xl">
-                                Get Free Consultation
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-
-                            <button className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                                View Our Portfolio
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Quick Stats */}
-                    <div className="grid md:grid-cols-4 gap-6">
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-white mb-1">150+</div>
-                            <div className="text-white/70 text-sm">Projects Completed</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-white mb-1">50+</div>
-                            <div className="text-white/70 text-sm">Happy Clients</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-white mb-1">5+</div>
-                            <div className="text-white/70 text-sm">Service Categories</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                            <div className="text-white/70 text-sm">Support Available</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            
             {/* Services Grid */}
             <section className="py-20 bg-gradient-to-b from-white to-gray-50/50 relative overflow-hidden">
                 {/* Background Elements */}

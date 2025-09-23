@@ -55,7 +55,7 @@ export function Header() {
                         <span className={`text-xl font-bold leading-none transition-colors duration-300 ${
                             isScrolled ? 'text-black' : 'text-white'
                         }`}>
-                            Cascading<span className="text-red-800">Xol</span>
+                            Cascading<span className="text-red-700">Xol</span>
                         </span>
                         <span className={`text-xs font-medium transition-colors duration-300 ${
                             isScrolled ? 'text-gray-600' : 'text-white/80'
@@ -72,7 +72,7 @@ export function Header() {
                             className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                                 isActive(item.href)
                                     ? isScrolled 
-                                        ? 'text-red-800 bg-red-50' 
+                                        ? 'text-red-700 bg-red-50' 
                                         : 'text-red-400 bg-white/10'
                                     : isScrolled
                                         ? 'text-gray-700 hover:text-black hover:bg-gray-50'
@@ -81,9 +81,9 @@ export function Header() {
                         >
                             {item.name}
                             {isActive(item.href) && (
-                                <div className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-red-800 transition-all duration-300"></div>
+                                <div className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-red-700 transition-all duration-300"></div>
                             )}
-                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-800/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-700/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </Link>
                     ))}
                 </nav>
@@ -94,7 +94,7 @@ export function Header() {
                         asChild
                         className={`hidden md:inline-flex transition-all duration-300 group ${
                             isScrolled 
-                                ? 'bg-red-800 hover:bg-red-700 text-white shadow-lg hover:shadow-xl' 
+                                ? 'bg-red-700 hover:bg-red-700 text-white shadow-lg hover:shadow-xl' 
                                 : 'bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30'
                         }`}
                     >
@@ -127,7 +127,7 @@ export function Header() {
                                         <img src={LogoImage} alt="CascadingXol" className="h-8 w-8 object-contain" />
                                         <div>
                                             <h2 className="text-lg font-bold text-black">
-                                                Cascading<span className="text-red-800">Xol</span>
+                                                Cascading<span className="text-red-700">Xol</span>
                                             </h2>
                                             <p className="text-xs text-gray-500">Innovation in Flow</p>
                                         </div>
@@ -141,13 +141,13 @@ export function Header() {
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             className={`flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 group ${
                                                 isActive(item.href)
-                                                    ? 'text-red-800 bg-red-50 border-l-2 border-red-800'
+                                                    ? 'text-red-700 bg-red-50 border-l-2 border-red-700'
                                                     : 'text-gray-700 hover:text-black hover:bg-gray-50'
                                             }`}
                                         >
                                             <span>{item.name}</span>
                                             <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${
-                                                isActive(item.href) ? 'text-red-800' : 'text-gray-400 group-hover:translate-x-1'
+                                                isActive(item.href) ? 'text-red-700' : 'text-gray-400 group-hover:translate-x-1'
                                             }`} />
                                         </Link>
                                     ))}
@@ -155,7 +155,7 @@ export function Header() {
                                 <div className="mt-8 pt-6 border-t border-gray-100">
                                     <Button
                                         asChild
-                                        className="w-full bg-red-800 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="w-full bg-red-700 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <Link to="/contact">
