@@ -80,7 +80,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16 relative z-10">
         <div className="text-center max-w-7xl mx-auto mb-8 sm:mb-1">
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-1000 pt-10 ${
+            className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-1000 pt-10 ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-12"
@@ -95,7 +95,7 @@ export default function HeroSection() {
           </h1>
 
           <p
-            className={`text-lg sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto transition-all duration-1000 delay-200 px-4 ${
+            className={` text-sm sm:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto transition-all duration-1000 delay-200 px-4 ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-12"
