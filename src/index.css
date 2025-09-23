@@ -39,6 +39,20 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom CascadingXol Brand Colors */
+  --color-brand-red: #8b0000;
+  --color-brand-red-50: #fef2f2;
+  --color-brand-red-100: #fee2e2;
+  --color-brand-red-200: #fecaca;
+  --color-brand-red-300: #fca5a5;
+  --color-brand-red-400: #f87171;
+  --color-brand-red-500: #ef4444;
+  --color-brand-red-600: #dc2626;
+  --color-brand-red-700: #b91c1c;
+  --color-brand-red-800: #991b1b;
+  --color-brand-red-900: #8b0000;
+  --color-brand-red-950: #450a0a;
 }
 
 :root {
@@ -74,6 +88,22 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* CascadingXol Brand Colors */
+  --brand-red: #8b0000;
+  --brand-red-light: #a31515;
+  --brand-red-dark: #5c0000;
+  --brand-red-50: #fef2f2;
+  --brand-red-100: #fee2e2;
+  --brand-red-200: #fecaca;
+  --brand-red-300: #fca5a5;
+  --brand-red-400: #f87171;
+  --brand-red-500: #ef4444;
+  --brand-red-600: #dc2626;
+  --brand-red-700: #b91c1c;
+  --brand-red-800: #991b1b;
+  --brand-red-900: #8b0000;
+  --brand-red-950: #450a0a;
 }
 
 .dark {
@@ -116,5 +146,112 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Brand Red Utility Classes */
+@layer utilities {
+  .text-brand-red {
+    color: var(--brand-red);
+  }
+
+  .bg-brand-red {
+    background-color: var(--brand-red);
+  }
+
+  .border-brand-red {
+    border-color: var(--brand-red);
+  }
+
+  .text-brand-red-light {
+    color: var(--brand-red-light);
+  }
+
+  .bg-brand-red-light {
+    background-color: var(--brand-red-light);
+  }
+
+  .text-brand-red-dark {
+    color: var(--brand-red-dark);
+  }
+
+  .bg-brand-red-dark {
+    background-color: var(--brand-red-dark);
+  }
+
+  /* Hover states */
+  .hover\:bg-brand-red:hover {
+    background-color: var(--brand-red);
+  }
+
+  .hover\:text-brand-red:hover {
+    color: var(--brand-red);
+  }
+
+  .hover\:border-brand-red:hover {
+    border-color: var(--brand-red);
+  }
+
+  /* Focus states */
+  .focus\:ring-brand-red:focus {
+    --tw-ring-color: var(--brand-red);
+  }
+
+  /* Gradient utilities */
+  .bg-gradient-brand-red {
+    background: linear-gradient(
+      135deg,
+      var(--brand-red-dark),
+      var(--brand-red)
+    );
+  }
+
+  .bg-gradient-brand-red-light {
+    background: linear-gradient(
+      135deg,
+      var(--brand-red),
+      var(--brand-red-light)
+    );
+  }
+}
+
+/* Custom animations for brand elements */
+@layer components {
+  .brand-glow {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .brand-glow:hover {
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+  }
+
+  .brand-pulse {
+    animation: brand-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes brand-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .brand-fade-in {
+    animation: brand-fade-in 0.6s ease-out;
+  }
+
+  @keyframes brand-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

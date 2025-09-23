@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Menu, ChevronRight } from "lucide-react"
+import { Menu, ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
 import LogoImage from "../../assets/icon.png"
 import {
@@ -25,7 +25,7 @@ export function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20)
+            setIsScrolled(window.scrollY > 50)
         }
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
@@ -34,10 +34,11 @@ export function Header() {
     const isActive = (href: string) => location.pathname === href
 
     return (
-        <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg'
-            : 'bg-white border-b border-gray-100'
-            }`}>
+        <header className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+            isScrolled
+                ? 'bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg'
+                : 'bg-transparent'
+        }`}>
             <div className="mx-auto flex container items-center justify-between px-6 py-4">
                 {/* Logo */}
                 <Link
@@ -46,15 +47,19 @@ export function Header() {
                 >
                     <div className="relative">
                         <div className="absolute inset-0 rounded-lg shadow opacity-20 blur-sm group-hover:opacity-30 transition-opacity duration-300"></div>
-                        <div className="relative flex h-10 w-10 items-center justify-center rounded  shadow  text-white font-bold text-lg">
-                            <img src={LogoImage} alt="" />
+                        <div className="relative flex h-10 w-10 items-center justify-center rounded shadow bg-white text-white font-bold text-lg">
+                            <img src={LogoImage} alt="CascadingXol" className="h-10 w-10 object-contain" />
                         </div>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-xl font-bold text-[#0A1F44] leading-none">
-                            Cascading<span className="text-[#8B0000]">Xol</span>
+                        <span className={`text-xl font-bold leading-none transition-colors duration-300 ${
+                            isScrolled ? 'text-black' : 'text-white'
+                        }`}>
+                            Cascading<span className="text-red-800">Xol</span>
                         </span>
-                        <span className="text-xs text-gray-500 font-medium">Innovation in Flow</span>
+                        <span className={`text-xs font-medium transition-colors duration-300 ${
+                            isScrolled ? 'text-gray-600' : 'text-white/80'
+                        }`}>Innovation in Flow</span>
                     </div>
                 </Link>
 
@@ -64,16 +69,21 @@ export function Header() {
                         <Link
                             key={item.name}
                             to={item.href}
-                            className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${isActive(item.href)
-                                ? 'text-[#8B0000] bg-[#8B0000]/10'
-                                : 'text-gray-700 hover:text-[#0A1F44] hover:bg-gray-50'
-                                }`}
+                            className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                                isActive(item.href)
+                                    ? isScrolled 
+                                        ? 'text-red-800 bg-red-50' 
+                                        : 'text-red-400 bg-white/10'
+                                    : isScrolled
+                                        ? 'text-gray-700 hover:text-black hover:bg-gray-50'
+                                        : 'text-white/90 hover:text-white hover:bg-white/10'
+                            }`}
                         >
                             {item.name}
                             {isActive(item.href) && (
-                                <div className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-[#8B0000] transition-all duration-300"></div>
+                                <div className="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-red-800 transition-all duration-300"></div>
                             )}
-                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#0A1F44]/5 to-[#8B0000]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-800/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </Link>
                     ))}
                 </nav>
@@ -82,11 +92,15 @@ export function Header() {
                 <div className="flex items-center space-x-4">
                     <Button
                         asChild
-                        className="hidden md:inline-flex bg-gradient-to-r from-[#8B0000] to-[#8B0000]/90 hover:from-[#8B0000]/90 hover:to-[#8B0000] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                        className={`hidden md:inline-flex transition-all duration-300 group ${
+                            isScrolled 
+                                ? 'bg-red-800 hover:bg-red-700 text-white shadow-lg hover:shadow-xl' 
+                                : 'bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30'
+                        }`}
                     >
                         <Link to="/contact">
                             Get Started
-                            <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Link>
                     </Button>
 
@@ -97,9 +111,11 @@ export function Header() {
                                 <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="relative h-10 w-10 hover:bg-gray-100"
+                                    className={`relative h-10 w-10 transition-colors duration-300 ${
+                                        isScrolled ? 'hover:bg-gray-100 text-gray-700' : 'hover:bg-white/10 text-white'
+                                    }`}
                                 >
-                                    <Menu className={`h-5 w-5 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
+                                    <Menu className="h-5 w-5" />
                                 </Button>
                             </SheetTrigger>
                             <SheetContent
@@ -108,45 +124,43 @@ export function Header() {
                             >
                                 <SheetHeader className="border-b border-gray-100 pb-4 mb-6">
                                     <div className="flex items-center space-x-3">
-                                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-[#0A1F44] to-[#8B0000] text-white font-bold">
-                                            C
-                                        </div>
+                                        <img src={LogoImage} alt="CascadingXol" className="h-8 w-8 object-contain" />
                                         <div>
-                                            <h2 className="text-lg font-bold text-[#0A1F44]">
-                                                Cascading<span className="text-[#8B0000]">Xol</span>
+                                            <h2 className="text-lg font-bold text-black">
+                                                Cascading<span className="text-red-800">Xol</span>
                                             </h2>
                                             <p className="text-xs text-gray-500">Innovation in Flow</p>
                                         </div>
                                     </div>
                                 </SheetHeader>
-
                                 <nav className="flex flex-col space-y-2">
                                     {navItems.map((item) => (
                                         <Link
                                             key={item.name}
                                             to={item.href}
                                             onClick={() => setIsMobileMenuOpen(false)}
-                                            className={`flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 group ${isActive(item.href)
-                                                ? 'text-[#8B0000] bg-[#8B0000]/10 border-l-2 border-[#8B0000]'
-                                                : 'text-gray-700 hover:text-[#0A1F44] hover:bg-gray-50'
-                                                }`}
+                                            className={`flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 group ${
+                                                isActive(item.href)
+                                                    ? 'text-red-800 bg-red-50 border-l-2 border-red-800'
+                                                    : 'text-gray-700 hover:text-black hover:bg-gray-50'
+                                            }`}
                                         >
                                             <span>{item.name}</span>
-                                            <ChevronRight className={`h-4 w-4 transition-transform duration-300 ${isActive(item.href) ? 'text-[#8B0000]' : 'text-gray-400 group-hover:translate-x-1'
-                                                }`} />
+                                            <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${
+                                                isActive(item.href) ? 'text-red-800' : 'text-gray-400 group-hover:translate-x-1'
+                                            }`} />
                                         </Link>
                                     ))}
                                 </nav>
-
                                 <div className="mt-8 pt-6 border-t border-gray-100">
                                     <Button
                                         asChild
-                                        className="w-full bg-gradient-to-r from-[#8B0000] to-[#8B0000]/90 hover:from-[#8B0000]/90 hover:to-[#8B0000] text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="w-full bg-red-800 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <Link to="/contact">
                                             Get Started
-                                            <ChevronRight className="ml-2 h-4 w-4" />
+                                            <ArrowRight className="ml-2 h-4 w-4" />
                                         </Link>
                                     </Button>
                                 </div>
