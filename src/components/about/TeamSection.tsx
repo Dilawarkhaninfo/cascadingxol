@@ -15,11 +15,7 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  {
-    name: "Dilawar Khan",
-    role: "Software Engineer",
-    image: DilawarImage
-  },
+
   {
     name: "Rashid Saeed",
     role: "Textile Expert", 
@@ -29,6 +25,11 @@ const teamMembers: TeamMember[] = [
     name: "Tariq Nadeem", 
     role: "Pharmaceutical & Textile Expert",
     image: NadeemImage
+  },
+    {
+    name: "Dilawar Khan",
+    role: "Software Engineer",
+    image: DilawarImage
   },
   {
     name: "Ali Ahmed",
