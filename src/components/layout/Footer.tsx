@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUp, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LogoImage from "../../assets/icon.png"
+
 const footerLinks = {
     company: [
         { name: "About Us", href: "/about" },
@@ -33,19 +34,19 @@ const contactInfo = [
     {
         icon: Mail,
         label: "Email",
-        value: "hello@cascadingxol.com",
-        href: "mailto:hello@cascadingxol.com"
+        value: "info@cascadingxol.com",
+        href: "mailto:info@cascadingxol.com"
     },
     {
         icon: Phone,
         label: "Phone",
-        value: "+92 300 1234567",
-        href: "tel:+923001234567"
+        value: "+92 335 6555517",
+        href: "tel:+923356555517"
     },
     {
         icon: MapPin,
         label: "Address",
-        value: "Islamabad, Pakistan",
+        value: "Street 2, Umar Block H-13, Islamabad",
         href: "#"
     }
 ]
@@ -73,20 +74,20 @@ export function Footer() {
                              <div className="relative">
                         <div className="absolute inset-0 rounded-lg shadow opacity-20 blur-sm group-hover:opacity-30 transition-opacity duration-300"></div>
                         <div className="relative flex h-10 w-10 items-center justify-center rounded  shadow  text-white font-bold text-lg">
-                            <img src={LogoImage} alt="" />
+                            <img src={LogoImage} alt="CascadingXol Logo" />
                         </div>
                     </div>
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold text-[#0A1F44]">
                                     Cascading<span className="text-[#8B0000]">Xol</span>
                                 </span>
-                                <span className="text-sm text-gray-600">Innovation in Flow</span>
+                                <span className="text-sm text-gray-600">Private Limited</span>
                             </div>
                         </Link>
 
                         {/* Description */}
                         <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
-                            Building scalable, innovative software solutions that empower businesses to thrive in the digital age. From web to mobile, AI to marketing - we make technology work for you.
+                            A registered private limited company building scalable, innovative software solutions that empower businesses to thrive in the digital age. From web to mobile, AI to marketing - we make technology work for you.
                         </p>
 
                         {/* Contact Info */}
@@ -95,12 +96,12 @@ export function Footer() {
                                 <a
                                     key={contact.label}
                                     href={contact.href}
-                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-[#8B0000] transition-colors duration-300 group"
+                                    className="flex items-start space-x-3 text-sm text-gray-600 hover:text-[#8B0000] transition-colors duration-300 group"
                                 >
-                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-[#8B0000]/10 transition-colors duration-300">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-[#8B0000]/10 transition-colors duration-300 flex-shrink-0 mt-0.5">
                                         <contact.icon className="h-4 w-4 group-hover:text-[#8B0000] transition-colors duration-300" />
                                     </div>
-                                    <span>{contact.value}</span>
+                                    <span className="leading-relaxed">{contact.value}</span>
                                 </a>
                             ))}
                         </div>
@@ -229,38 +230,21 @@ export function Footer() {
                     </div>
                 </div>
 
-                {/* Newsletter Section */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
-                        <div className="max-w-md">
-                            <h3 className="text-lg font-semibold text-[#0A1F44] mb-2">
-                                Stay Updated
-                            </h3>
-                            <p className="text-sm text-gray-600">
-                                Get the latest insights on technology trends, case studies, and company updates.
-                            </p>
-                        </div>
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0000] focus:border-transparent outline-none transition-all duration-300 min-w-[280px]"
-                            />
-                            <Button className="bg-gradient-to-r from-[#8B0000] to-[#8B0000]/90 hover:from-[#8B0000]/90 hover:to-[#8B0000] text-white px-6 whitespace-nowrap">
-                                Subscribe
-                            </Button>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
 
             {/* Bottom Bar */}
             <div className="border-t border-gray-200 bg-white/50">
                 <div className="mx-auto container px-6 py-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
-                        <p className="text-sm text-gray-500">
-                            © {new Date().getFullYear()} CascadingXol. All rights reserved. Built with ❤️ in Pakistan.
-                        </p>
+                        <div className="flex flex-col space-y-1">
+                            <p className="text-sm text-gray-500">
+                                © {new Date().getFullYear()} CascadingXol Private Limited. All rights reserved.
+                            </p>
+                            <p className="text-xs text-gray-400">
+                                Built with ❤️ in Pakistan | Registered Private Limited Company
+                            </p>
+                        </div>
                         
                         <div className="flex items-center space-x-6">
                             <span className="text-xs text-gray-400">

@@ -7,7 +7,9 @@ import {
   ArrowRight,
   Globe,
   Sparkles,
-  Target
+  Target,
+  Clock,
+  TrendingUp
 } from "lucide-react";
 
 const features = [
@@ -46,6 +48,16 @@ const achievements = [
     icon: Target, 
     number: "99%", 
     label: "Success Rate"
+  },
+  { 
+    icon: Clock, 
+    number: "5+", 
+    label: "Years Experience"
+  },
+  { 
+    icon: TrendingUp, 
+    number: "300%", 
+    label: "Growth Rate"
   }
 ];
 
@@ -133,7 +145,7 @@ export default function WhyChooseUs() {
                         <h3 className="text-xl font-bold text-white drop-shadow-lg">
                           {feature.title}
                         </h3>
-                        <span className="text-sm font-semibold text-red-100 bg-red-800   px-3 py-1 rounded-full border border-red-300/30">
+                        <span className="text-sm font-semibold text-red-100 bg-red-800 px-3 py-1 rounded-full border border-red-300/30">
                           {feature.stats}
                         </span>
                       </div>
@@ -206,8 +218,8 @@ export default function WhyChooseUs() {
                 <p className="text-lg text-red-200">Numbers that speak for themselves</p>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid lg:grid-cols-3 gap-8 mb-12">
+              {/* Enhanced Stats Grid - 5 columns for desktop, responsive for mobile */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                 {achievements.map((achievement, index) => {
                   const IconComponent = achievement.icon;
                   return (
@@ -217,10 +229,10 @@ export default function WhyChooseUs() {
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                         <IconComponent className="h-8 w-8 text-white relative z-10 group-hover:text-red-300 transition-colors duration-300" />
                       </div>
-                      <div className="text-5xl font-bold text-white mb-2 bg-gradient-to-r from-white to-red-200 bg-clip-text group-hover:from-red-400 group-hover:to-red-200 transition-all duration-300">
+                      <div className="text-4xl lg:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-white to-red-200 bg-clip-text group-hover:from-red-400 group-hover:to-red-200 transition-all duration-300">
                         {achievement.number}
                       </div>
-                      <div className="text-lg font-semibold text-white">
+                      <div className="text-base lg:text-lg font-semibold text-white">
                         {achievement.label}
                       </div>
                     </div>

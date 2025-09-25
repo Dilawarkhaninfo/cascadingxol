@@ -59,7 +59,7 @@ export function Header() {
                         </span>
                         <span className={`text-xs font-medium transition-colors duration-300 ${
                             isScrolled ? 'text-gray-600' : 'text-white/80'
-                        }`}>Innovation in Flow</span>
+                        }`}>Private Limited</span>
                     </div>
                 </Link>
 

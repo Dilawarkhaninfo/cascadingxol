@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Crown, Star, Sparkles } from "lucide-react";
  
 import DilawarImage from "../../assets/Dilawar.png";
 import RashidImage from "../../assets/Rashid.png";
@@ -12,29 +13,37 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
+  isFounder?: boolean;
+  isCEO?: boolean;
+  isCTO?: boolean;
 }
 
 const teamMembers: TeamMember[] = [
-
   {
     name: "Rashid Saeed",
     role: "Textile Expert", 
-    image: RashidImage
+    image: RashidImage,
+    isFounder: true,
+    isCEO: true
   },
   {
     name: "Tariq Nadeem", 
     role: "Pharmaceutical & Textile Expert",
-    image: NadeemImage
+    image: NadeemImage,
+    isFounder: true,
+    isCTO: true
   },
-    {
+  {
     name: "Dilawar Khan",
     role: "Software Engineer",
-    image: DilawarImage
+    image: DilawarImage,
+    isFounder: true
   },
   {
     name: "Ali Ahmed",
     role: "Agriculture Expert",
-    image: AliImage
+    image: AliImage,
+    isFounder: true
   }
 ];
 
@@ -96,14 +105,14 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="flex flex-wrap justify-center gap-8 mb-16 container mx-auto">
           {teamMembers.map((member, index) => {
             const isHovered = hoveredMember === index;
             
             return (
               <Card
                 key={member.name}
-                className={`group cursor-pointer transition-all duration-500 bg-transparent border-none hover:shadow-2xl hover:shadow-red-500/10 rounded-3xl overflow-hidden ${
+                className={`group cursor-pointer transition-all duration-500 bg-transparent border-none hover:shadow-2xl hover:shadow-red-500/20 rounded-3xl overflow-hidden w-80 ${
                   isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
                 style={{ transitionDelay: `${(index + 1) * 200}ms` }}
@@ -111,6 +120,24 @@ export default function TeamSection() {
                 onMouseLeave={() => setHoveredMember(null)}
               >
                 <CardContent className="p-0 relative h-96">
+                  {/* CEO Crown Icon */}
+                  {member.isCEO && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 rounded-full shadow-xl border-2 border-blue-400">
+                        <Crown className="w-5 h-5" />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* CTO Sparkles Icon */}
+                  {member.isCTO && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2 rounded-full shadow-xl border-2 border-blue-400">
+                        <Sparkles className="w-5 h-5" />
+                      </div>
+                    </div>
+                  )}
+
                   {/* Image Container with Overlay Content */}
                   <div className="relative h-full overflow-hidden rounded-3xl bg-gray-950/60 backdrop-blur-md border border-gray-700/50 group-hover:border-red-500/40 transition-all duration-500">
                     <img
@@ -128,20 +155,50 @@ export default function TeamSection() {
                         {member.name}
                       </h3>
                       
-                      <Badge className="bg-red-600/80 text-white hover:bg-red-500 border-none transition-all duration-300 backdrop-blur-sm">
-                        {member.role}
-                      </Badge>
+                      <div className="flex flex-col gap-2 items-center">
+                      
+                        
+                        {/* CEO Badge */}
+                        {member.isCEO && (
+                          <Badge className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white hover:from-blue-500 hover:to-indigo-600 border-none transition-all duration-300 backdrop-blur-sm font-bold shadow-xl px-4 py-1 text-sm flex items-center gap-1">
+                            <Crown className="w-3 h-3" />
+                            CEO & Founder
+                          </Badge>
+                        )}
+
+                        {/* CTO Badge */}
+                        {member.isCTO && (
+                          <Badge className="bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 border-none transition-all duration-300 backdrop-blur-sm font-bold shadow-xl px-4 py-1 text-sm flex items-center gap-1">
+                            <Sparkles className="w-3 h-3" />
+                            CTO & Co-Founder
+                          </Badge>
+                        )}
+
+                          <Badge className="bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 border-none transition-all duration-300 backdrop-blur-sm px-4 py-1 text-sm font-medium">
+                          {member.role}
+                        </Badge>
+                      </div>
                     </div>
 
-                    {/* Accent line at bottom */}
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600 transition-all duration-500 ${
-                      isHovered ? 'opacity-100' : 'opacity-60'
-                    }`}></div>
+                    {/* Special accent line */}
+                    <div className={`absolute bottom-0 left-0 right-0 h-1 transition-all duration-500 ${
+                      member.isCEO 
+                        ? 'bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600' 
+                        : member.isCTO
+                        ? 'bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500'
+                        : 'bg-gradient-to-r from-red-500 to-red-700'
+                    } ${isHovered ? 'opacity-100 h-2' : 'opacity-80'}`}></div>
                   </div>
 
-                  {/* Subtle glow effect on hover */}
-                  <div className={`absolute inset-0 bg-red-500/5 transition-opacity duration-500 pointer-events-none ${
+                  {/* Special glow effect */}
+                  <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none rounded-3xl ${
                     isHovered ? 'opacity-100' : 'opacity-0'
+                  } ${
+                    member.isCEO 
+                      ? 'bg-gradient-to-t from-blue-500/10 to-blue-500/5' 
+                      : member.isCTO 
+                      ? 'bg-gradient-to-t from-blue-500/10 to-blue-600/5'
+                      : 'bg-red-500/10'
                   }`}></div>
                 </CardContent>
               </Card>
@@ -164,7 +221,8 @@ export default function TeamSection() {
               <p className="text-gray-300 mb-6">
                 Let our experienced team help you transform your business with innovative digital solutions.
               </p>
-              <Button className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-8 py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 rounded-xl">
+              <Button className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-8 py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 rounded-xl flex items-center gap-2 mx-auto">
+                <Star className="w-4 h-4" />
                 Get In Touch
               </Button>
             </CardContent>
