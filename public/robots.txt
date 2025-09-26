@@ -1,0 +1,45 @@
+# robots.txt for cascadingxol.com
+# This file tells search engines which pages they can and cannot access
+
+User-agent: *
+Allow: /
+
+# Sitemap location - tells search engines where to find your sitemap
+Sitemap: https://www.cascadingxol.com/sitemap.xml
+
+# Crawl delay - prevents overwhelming your server
+Crawl-delay: 1
+
+# Block access to sensitive directories (uncomment if needed)
+# Disallow: /admin/
+# Disallow: /dashboard/
+# Disallow: /api/
+# Disallow: /_next/
+# Disallow: /node_modules/
+
+# Explicitly allow important file types for SEO
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+
+# Block common bot traps and unwanted crawlers
+Disallow: /search?
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /404
+
+# Special rules for specific bots (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

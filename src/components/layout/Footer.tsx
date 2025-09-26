@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUp, ExternalLink } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, ArrowUp, ExternalLink, Facebook, Instagram, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LogoImage from "../../assets/icon.png"
 
@@ -46,7 +46,7 @@ const contactInfo = [
     {
         icon: MapPin,
         label: "Address",
-        value: "Street 2, Umar Block H-13, Islamabad",
+        value: "Sector H-13, Islamabad, Pakistan",
         href: "#"
     }
 ]
@@ -55,6 +55,9 @@ const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Github, href: "#", label: "GitHub" },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Youtube, href: "#", label: "Youtube" },
 ]
 
 export function Footer() {
@@ -241,15 +244,11 @@ export function Footer() {
                             <p className="text-sm text-gray-500">
                                 © {new Date().getFullYear()} CascadingXol Private Limited. All rights reserved.
                             </p>
-                            <p className="text-xs text-gray-400">
-                                Built with ❤️ in Pakistan | Registered Private Limited Company
-                            </p>
+                           
                         </div>
                         
                         <div className="flex items-center space-x-6">
-                            <span className="text-xs text-gray-400">
-                                Made with React + Tailwind
-                            </span>
+                       
                             <Button
                                 onClick={scrollToTop}
                                 variant="ghost"
