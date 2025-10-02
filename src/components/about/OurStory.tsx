@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Users, Trophy, ArrowRight, Sparkles, Star } from "lucide-react"
+import {   MapPin, Users, Trophy, ArrowRight, Sparkles, Star } from "lucide-react"
 
 const milestones = [
     {
@@ -27,13 +27,7 @@ const milestones = [
     }
 ]
 
-const stats = [
-    { number: "100+", label: "Projects Completed" },
-    { number: "50+", label: "Happy Clients" },
-    { number: "5+", label: "Years Experience" },
-    { number: "10+", label: "Countries Served" }
-]
-
+ 
 export default function OurStory() {
     return (
         <section className="relative min-h-screen bg-gray-50 overflow-hidden">
@@ -45,54 +39,7 @@ export default function OurStory() {
             </div>
 
             <div className="relative z-10">
-                {/* Hero Section - Modern Layout */}
-                <div className="container mx-auto px-6 pt-20 pb-16">
-                    <div className="max-w-4xl mx-auto text-center mb-20">
-                        <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-8 shadow-sm border border-gray-200">
-                            <Calendar className="h-5 w-5 text-[#8B0000]" />
-                            <span className="text-sm font-semibold text-[#0A1F44]">Our Journey</span>
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl font-bold text-[#0A1F44] mb-8 leading-tight">
-                            Our Story of{" "}
-                            <span className="text-transparent bg-gradient-to-r from-[#8B0000] to-[#0A1F44] bg-clip-text">
-                                Innovation
-                            </span>
-                        </h1>
-
-                        <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
-                            From humble beginnings in Pakistan to serving clients worldwide, CascadingXol has been 
-                            transforming businesses through cutting-edge technology and unwavering dedication to excellence.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#8B0000] to-[#0A1F44] text-white rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 group">
-                                Discover Our Journey
-                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
-                            <button className="inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-[#0A1F44] rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 border border-gray-200">
-                                Watch Our Story
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Stats Section - Modern Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="group">
-                                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:-translate-y-3 border border-gray-200">
-                                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#8B0000] to-[#0A1F44] bg-clip-text text-transparent mb-3">
-                                        {stat.number}
-                                    </div>
-                                    <div className="text-gray-600 font-medium text-sm md:text-base">
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
+           
                 {/* Story Content - Modern Two Column */}
                 <div className="bg-white/50 backdrop-blur-sm py-20">
                     <div className="container mx-auto px-6">

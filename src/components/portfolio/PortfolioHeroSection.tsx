@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import {
   Award,
   Users,
-  Clock,
-  Target,
+   Target,
    BarChart3,
   Code,
   Smartphone,
   Trophy,
-  Zap
+  Zap,
+  Briefcase,
+  CheckCircle,
+  Code2
 } from "lucide-react";
 
 const portfolioHighlights = [
@@ -54,12 +56,11 @@ const portfolioHighlights = [
 const infiniteHighlights = [...portfolioHighlights, ...portfolioHighlights, ...portfolioHighlights];
 
 const portfolioStats = [
-  { icon: Target, number: "150+", label: "Projects Delivered" },
-  { icon: Users, number: "50+", label: "Happy Clients" },
-  { icon: Clock, number: "5+", label: "Years Experience" },
-  { icon: Award, number: "99%", label: "Success Rate" }
+  { icon: Target, number: "150+", label: "Projects Completed" },
+  { icon: Briefcase, number: "12+", label: "Industries Served" },
+  { icon: CheckCircle, number: "95%", label: "On-Time Delivery" },
+  { icon: Code2, number: "200K+", label: "Lines of Code" }
 ];
-
 export default function PortfolioHeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
 

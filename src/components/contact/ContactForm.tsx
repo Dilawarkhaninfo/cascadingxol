@@ -164,7 +164,7 @@ export default function ContactForm() {
                         <Input
                             type="tel"
                             name="phone"
-                            placeholder="+92 300 1234567"
+                            placeholder="+92 335 6555517"
                             value={form.phone}
                             onChange={handleChange}
                             className="border-2 border-gray-200 focus:border-[#8B0000] focus:ring-[#8B0000] rounded-xl py-3"

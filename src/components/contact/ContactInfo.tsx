@@ -4,16 +4,16 @@ const contactMethods = [
     {
         icon: Mail,
         title: "Email Us",
-        primary: "hello@cascadingxol.com",
+        primary: "info@cascadingxol.com",
         secondary: "support@cascadingxol.com",
         description: "Send us your requirements and we'll respond within 2 hours",
-        action: "mailto:hello@cascadingxol.com",
+        action: "mailto:info@cascadingxol.com",
         gradient: "from-blue-500 to-blue-600"
     },
     {
         icon: Phone,
         title: "Call Us",
-        primary: "+92 300 1234567",
+        primary: "+92 335 6555517",
         secondary: "+92 333 9876543",
         description: "Speak directly with our team for immediate assistance",
         action: "tel:+923001234567",
@@ -22,7 +22,7 @@ const contactMethods = [
     {
         icon: MessageSquare,
         title: "WhatsApp",
-        primary: "+92 300 1234567",
+        primary: "+92 335 6555517",
         secondary: "Business Hours",
         description: "Quick questions? Message us on WhatsApp for faster response",
         action: "https://wa.me/923001234567",

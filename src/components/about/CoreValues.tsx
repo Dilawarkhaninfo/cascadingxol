@@ -1,204 +1,194 @@
-import { Lightbulb, Shield, TrendingUp, Award, CheckCircle, ArrowRight } from "lucide-react"
+import { Lightbulb, Shield, TrendingUp, Award, ArrowRight } from "lucide-react";
+import type { JSX } from "react";
 
-const values = [
+interface Value {
+  icon: JSX.Element;
+  title: string;
+  image: string;
+}
+
+interface Achievement {
+  metric: string;
+  label: string;
+}
+
+const values: Value[] = [
     {
-        icon: <Lightbulb className="h-12 w-12" />,
+        icon: <Lightbulb className="h-7 w-7" />,
         title: "Innovation",
-        subtitle: "Creativity & New Ideas",
-        description: "We embrace cutting-edge technologies and creative thinking to deliver solutions that set new industry standards and drive meaningful change.",
-        image: "https://images.unsplash.com/photo-1553028826-f4804151e04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        gradient: "from-purple-500 to-purple-600",
-        bgGradient: "from-purple-50 to-purple-100",
-        principles: ["Latest Technologies", "Creative Problem Solving", "Future-Forward Thinking"]
+        image: "https://scontent.fisb32-1.fna.fbcdn.net/o1/v/t0/f2/m469/AQOwb6Oh9188ilvqji3cYAvKDNhLWj5mcSBylFz5Hivb6zXuYGck3y-NJ0Y78BumznuHn80dOP96UryuBg0lf2B4v1GOlvGm9wEnsaL2pIxr-UGgs8eu8VVwzPbN7Rmt.png?_nc_ht=scontent.fisb32-1.fna.fbcdn.net&_nc_gid=A76B-OeKHa-R0TtN6qgOMw&_nc_cat=107&_nc_oc=AdlEcy94ZflkPTmNMatjr7iqhaQF-He0Mum5-ZgI0592pRMC8LSXmeLb20iP88ccobE&ccb=9-4&oh=00_AfZmC7Fo_fI6qWz4GGV76LQkdHdAEn3tnlzBQMdrCrCKJg&oe=68DFE8AF&_nc_sid=5b3566"
     },
     {
-        icon: <Shield className="h-12 w-12" />,
+        icon: <Shield className="h-7 w-7" />,
         title: "Integrity",
-        subtitle: "Trust & Honesty",
-        description: "We build lasting relationships through transparency, ethical practices, and unwavering commitment to our promises and deadlines.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        gradient: "from-blue-500 to-blue-600",
-        bgGradient: "from-blue-50 to-blue-100",
-        principles: ["Transparent Communication", "Ethical Practices", "Reliable Delivery"]
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-        icon: <TrendingUp className="h-12 w-12" />,
+        icon: <TrendingUp className="h-7 w-7" />,
         title: "Scalability",
-        subtitle: "Growth-Ready Solutions",
-        description: "Every solution we create is designed to grow with your business, ensuring long-term value and adaptability to changing needs.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        gradient: "from-green-500 to-green-600",
-        bgGradient: "from-green-50 to-green-100",
-        principles: ["Future-Proof Architecture", "Flexible Design", "Performance Optimization"]
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-        icon: <Award className="h-12 w-12" />,
+        icon: <Award className="h-7 w-7" />,
         title: "Excellence",
-        subtitle: "World-Class Quality",
-        description: "We strive for perfection in every project, maintaining the highest standards of quality that compete on the global stage.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        gradient: "from-[#8B0000] to-red-600",
-        bgGradient: "from-red-50 to-red-100",
-        principles: ["Quality Assurance", "Best Practices", "Global Standards"]
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
-]
+];
 
-const achievements = [
+const achievements: Achievement[] = [
     { metric: "99%", label: "Client Satisfaction" },
     { metric: "100%", label: "On-Time Delivery" },
     { metric: "24/7", label: "Support Available" },
     { metric: "150+", label: "Projects Delivered" }
-]
+];
 
 export default function CoreValues() {
     return (
-        <section className="py-20 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden">
-            {/* Background Pattern */}
-         
+        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-40">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(220,38,38,0.08)_0%,transparent_50%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(139,69,19,0.05)_0%,transparent_50%)]" />
+            </div>
 
-            {/* Floating elements */}
-            <div className="absolute top-10 left-10 w-32 h-32 bg-[#8B0000]/10 rounded-full blur-2xl animate-pulse" />
-            <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#0A1F44]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-            <div className="container mx-auto px-6 relative">
-                {/* Section Header */}
+            <div className="w-full mx-auto relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#0A1F44]/10 to-[#8B0000]/10 rounded-full px-6 py-2 mb-6">
-                        <Award className="h-5 w-5 text-[#8B0000]" />
-                        <span className="text-sm font-semibold text-[#0A1F44]">Core Values</span>
-                    </div>
+               
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#0A1F44] mb-6">
+                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                         Values That Drive
-                        <span className="text-transparent bg-gradient-to-r from-[#8B0000] to-[#0A1F44] bg-clip-text"> Excellence</span>
+                        <span className="block bg-gradient-to-r from-red-700 to-red-900 bg-clip-text text-transparent"> Excellence</span>
                     </h2>
 
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Our core values aren't just words on a wall - they're the foundation of every decision we make,
-                        every solution we build, and every relationship we nurture.
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Our core values aren't just words on a wall - they're the foundation of every decision we make and every solution we build.
                     </p>
                 </div>
 
-                {/* Values Grid */}
-                <div className="grid lg:grid-cols-2 gap-8 mb-20">
+                {/* Values Grid - No Gap */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 mb-24">
                     {values.map((value, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#8B0000]/20 hover:-translate-y-2"
+                            className="group relative h-[500px] overflow-hidden transition-all duration-500 hover:z-10"
+                            style={{
+                                backgroundImage: `url(${value.image})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
                         >
-                            {/* Image Section */}
-                            <div className="relative h-64 overflow-hidden">
-                                <img
-                                    src={value.image}
-                                    alt={value.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-                                {/* Icon overlay */}
-                                <div className="absolute top-6 left-6">
-                                    <div className={`p-4 bg-gradient-to-br ${value.gradient} rounded-2xl shadow-xl text-white`}>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/60 transition-all duration-500" />
+                            
+                            <div className="relative h-full flex flex-col justify-end p-8 z-10">
+                                <div className="flex items-center gap-4 transform group-hover:translate-y-[-10px] transition-transform duration-500">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
                                         {value.icon}
                                     </div>
-                                </div>
-
-                                {/* Title overlay */}
-                                <div className="absolute bottom-6 left-6 right-6">
-                                    <h3 className="text-2xl font-bold text-white mb-1">
+                                    <h3 className="text-2xl font-bold text-white">
                                         {value.title}
                                     </h3>
-                                    <p className="text-white/80 text-sm">
-                                        {value.subtitle}
-                                    </p>
                                 </div>
                             </div>
-
-                            {/* Content Section */}
-                            <div className="p-8">
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    {value.description}
-                                </p>
-
-                                {/* Principles */}
-                                <div className="space-y-3 mb-6">
-                                    {value.principles.map((principle, principleIndex) => (
-                                        <div key={principleIndex} className="flex items-center space-x-3">
-                                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                                            <span className="text-sm text-gray-700">{principle}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Learn More Link */}
-                                <div className="flex items-center text-[#8B0000] font-medium group-hover:translate-x-2 transition-transform duration-300 cursor-pointer">
-                                    <span className="text-sm">How We Apply This</span>
-                                    <ArrowRight className="h-4 w-4 ml-2" />
-                                </div>
-                            </div>
-
-                            {/* Hover Effect Border */}
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#8B0000]/30 rounded-3xl transition-all duration-300" />
                         </div>
                     ))}
                 </div>
 
                 {/* Achievements Section */}
-                <div className="relative">
-                    <div className="bg-gradient-to-r from-[#0A1F44] to-[#8B0000] rounded-3xl p-12 md:p-16 text-white relative overflow-hidden shadow-2xl">
-              
+                <div className="relative container mx-auto px-6 bg-gradient-to-br from-red-950/95 via-slate-900/90 to-red-950/95 rounded-3xl p-12 border border-red-800/50 overflow-hidden shadow-2xl backdrop-blur-sm">
+                    <div className="absolute inset-0 opacity-20">
+                        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(220,38,38,0.4)_1px,transparent_1px),linear-gradient(rgba(220,38,38,0.4)_1px,transparent_1px)] bg-[size:40px_40px] animate-cyber-grid" />
+                    </div>
 
-                        <div className="relative">
-                            {/* Header */}
-                            <div className="text-center mb-12">
-                                <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                                    Values in Action
-                                </h3>
-                                <p className="text-xl text-white/80 max-w-2xl mx-auto">
-                                    These aren't just ideals - they're measurable commitments we deliver on every single day.
-                                </p>
-                            </div>
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-red-400/20 to-red-600/30 rounded-full animate-float-glow shadow-[0_0_60px_rgba(220,38,38,0.4)]" />
+                        <div className="absolute top-32 right-16 w-24 h-24 bg-gradient-to-br from-red-500/25 to-red-800/20 rounded-full animate-float-reverse-glow shadow-[0_0_50px_rgba(220,38,38,0.3)] animation-delay-1000" />
+                        <div className="absolute bottom-20 left-20 w-20 h-20 bg-gradient-to-br from-red-600/20 to-red-400/25 rounded-full animate-float-glow shadow-[0_0_40px_rgba(220,38,38,0.3)] animation-delay-2000" />
+                    </div>
 
-                            {/* Achievements Grid */}
-                            <div className="grid md:grid-cols-4 gap-8 mb-12">
-                                {achievements.map((achievement, index) => (
-                                    <div key={index} className="text-center group">
-                                        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-3xl mb-6 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                                            <div className="text-3xl font-bold text-white">
-                                                {achievement.metric}
-                                            </div>
-                                        </div>
-                                        <div className="text-lg font-medium text-white/90">
-                                            {achievement.label}
+                    <div className="relative">
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl font-bold text-white mb-4 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                                Values in Action
+                            </h3>
+                            <p className="text-lg text-red-200">
+                                These aren't just ideals - they're measurable commitments we deliver on every single day.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                            {achievements.map((achievement, index) => (
+                                <div key={index} className="text-center group">
+                                    <div className="inline-flex items-center justify-center w-20 h-20 bg-red-900/40 backdrop-blur-sm rounded-2xl mb-6 group-hover:bg-red-800/60 transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(220,38,38,0.3)] border border-red-700/50 group-hover:border-red-500/50 relative overflow-hidden group-hover:shadow-[0_0_40px_rgba(220,38,38,0.5)]">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                                        <div className="text-2xl lg:text-3xl font-bold text-white relative z-10">
+                                            {achievement.metric}
                                         </div>
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Bottom Content */}
-                            <div className="text-center">
-                                <h4 className="text-2xl font-bold mb-4">
-                                    Experience Our Values Firsthand
-                                </h4>
-                                <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-                                    Every project is an opportunity to demonstrate our commitment to innovation,
-                                    integrity, scalability, and excellence.
-                                </p>
-
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button className="inline-flex items-center px-8 py-4 bg-white text-[#0A1F44] rounded-full font-bold hover:bg-gray-100 transition-all duration-300 group shadow-xl hover:shadow-2xl">
-                                        Start Your Project
-                                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                                    </button>
-
-                                    <button className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                                        Read Our Case Studies
-                                    </button>
+                                    <div className="text-sm lg:text-base font-semibold text-white">
+                                        {achievement.label}
+                                    </div>
                                 </div>
+                            ))}
+                        </div>
+
+                        <div className="text-center">
+                            <h4 className="text-2xl font-bold text-white mb-4">
+                                Experience Our Values Firsthand
+                            </h4>
+                            <p className="text-lg text-red-200 mb-8 max-w-2xl mx-auto">
+                                Every project is an opportunity to demonstrate our commitment to innovation, integrity, scalability, and excellence.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-700 to-red-800 text-white rounded-full font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300 group shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:shadow-[0_0_40px_rgba(220,38,38,0.6)] transform hover:-translate-y-1 relative overflow-hidden border border-red-500/30">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                                    <span className="relative z-10">Start Your Project</span>
+                                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                                </button>
+
+                                <button className="inline-flex items-center px-8 py-4 border-2 border-red-500/50 text-white rounded-full font-semibold hover:bg-red-500/10 transition-all duration-300 backdrop-blur-sm hover:border-red-500/70">
+                                    Read Our Case Studies
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                @keyframes cyber-grid {
+                    0% { transform: translate(0, 0); }
+                    100% { transform: translate(40px, 40px); }
+                }
+                
+                @keyframes float-glow {
+                    0%, 100% { 
+                        transform: translateY(0) rotate(0deg); 
+                        box-shadow: 0 0 60px rgba(220,38,38,0.4);
+                    }
+                    50% { 
+                        transform: translateY(-20px) rotate(180deg); 
+                        box-shadow: 0 0 80px rgba(220,38,38,0.6);
+                    }
+                }
+                
+                @keyframes float-reverse-glow {
+                    0%, 100% { 
+                        transform: translateY(0) rotate(0deg); 
+                        box-shadow: 0 0 50px rgba(220,38,38,0.3);
+                    }
+                    50% { 
+                        transform: translateY(20px) rotate(-180deg); 
+                        box-shadow: 0 0 70px rgba(220,38,38,0.5);
+                    }
+                }
+                
+                .animate-cyber-grid { animation: cyber-grid 25s linear infinite; }
+                .animate-float-glow { animation: float-glow 6s ease-in-out infinite; }
+                .animate-float-reverse-glow { animation: float-reverse-glow 8s ease-in-out infinite; }
+                
+                .animation-delay-1000 { animation-delay: 1s; }
+                .animation-delay-2000 { animation-delay: 2s; }
+            `}</style>
         </section>
-    )
+    );
 }

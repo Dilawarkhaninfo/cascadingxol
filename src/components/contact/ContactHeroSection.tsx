@@ -3,10 +3,12 @@ import {
   MessageSquare,
   Clock,
   Users,
-  CheckCircle,
   Phone,
   Mail,
   Calendar,
+  Zap,
+  MapPin,
+  DollarSign,
 } from "lucide-react";
 
 const contactHighlights = [
@@ -56,10 +58,10 @@ const infiniteHighlights = [
 ];
 
 const responseStats = [
-  { icon: MessageSquare, metric: "< 2 Hours", label: "Response Time" },
-  { icon: Clock, metric: "24/7", label: "Support Available" },
-  { icon: Users, metric: "100%", label: "Client Satisfaction" },
-  { icon: CheckCircle, metric: "Free", label: "Initial Consultation" },
+  { icon: Clock, number: "24/7", label: "Available Support" },
+  { icon: Zap, number: "2hrs", label: "Response Time" },
+  { icon: MapPin, number: "5", label: "Office Locations" },
+  { icon: DollarSign, number: "100%", label: "Free Consultation" },
 ];
 
 export default function ContactHeroSection() {
@@ -128,11 +130,11 @@ export default function ContactHeroSection() {
             {responseStats.map((stat, index) => (
               <div key={index} className="group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300 group-hover:scale-105">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl mb-3 sm:mb-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl mb-3 sm:mb-4">
                     <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-white mb-1">
-                    {stat.metric}
+                    {stat.number}
                   </div>
                   <div className="text-white/70 text-xs sm:text-sm">
                     {stat.label}

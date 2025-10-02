@@ -7,7 +7,11 @@ import {
   Cloud,
   Rocket,
   CheckCircle,
-  } from "lucide-react";
+  Clock,
+  Layers,
+  Code,
+  Zap,
+} from "lucide-react";
 
 const services = [
   {
@@ -48,6 +52,13 @@ const services = [
   },
 ];
 
+const serviceStats = [
+  { icon: Layers, number: "6", label: "Service Categories" },
+  { icon: Clock, number: "24/7", label: "Support Available" },
+  { icon: Code, number: "50+", label: "Technologies Used" },
+  { icon: Zap, number: "48hrs", label: "Response Time" },
+];
+
 // Create duplicated array for seamless infinite scroll
 const infiniteServices = [...services, ...services, ...services];
 
@@ -79,9 +90,6 @@ export default function ServicesHeroSection() {
       {/* Header Section */}
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16 relative z-10">
         <div className="text-center max-w-7xl mx-auto mb-8 sm:mb-12 pt-10">
-          {/* Badge */}
-        
-
           <h1
             className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 transition-all duration-1000 ${
               isLoaded
@@ -107,9 +115,7 @@ export default function ServicesHeroSection() {
             growth.
           </p>
 
-      
-
-          {/* Quick Stats */}
+          {/* Stats Grid */}
           <div
             className={`grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto transition-all duration-1000 delay-400 ${
               isLoaded
@@ -117,38 +123,21 @@ export default function ServicesHeroSection() {
                 : "opacity-0 translate-y-12"
             }`}
           >
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                150+
+            {serviceStats.map((stat, index) => (
+              <div key={index} className="group">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300 group-hover:scale-105">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl mb-3 sm:mb-4">
+                    <stat.icon className="h-5 w-5 sm:h-6 sm:h-6 text-white" />
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-white/70 text-xs sm:text-sm">
+                    {stat.label}
+                  </div>
+                </div>
               </div>
-              <div className="text-white/70 text-xs sm:text-sm">
-                Projects Completed
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                50+
-              </div>
-              <div className="text-white/70 text-xs sm:text-sm">
-                Happy Clients
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                6
-              </div>
-              <div className="text-white/70 text-xs sm:text-sm">
-                Service Categories
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                24/7
-              </div>
-              <div className="text-white/70 text-xs sm:text-sm">
-                Support Available
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -163,7 +152,7 @@ export default function ServicesHeroSection() {
           <div
             className="flex space-x-6 animate-scroll group-hover:pause-animation"
             style={{
-              width: `${infiniteServices.length * 312}px`, // 300px width + 12px gap
+              width: `${infiniteServices.length * 312}px`,
             }}
           >
             {infiniteServices.map((service, index) => {
@@ -261,7 +250,6 @@ function ServiceCard({ service, IconComponent }: ServiceCardProps) {
               <div className="w-8 h-8 border-2 border-red-700 border-t-transparent rounded-full animate-spin"></div>
             </div>
           )}
-
           {/* Dark overlay for better text contrast */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70 group-hover:from-black/70 group-hover:via-black/50 group-hover:to-black/80 transition-all duration-500"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>

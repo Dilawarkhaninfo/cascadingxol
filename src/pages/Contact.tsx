@@ -111,7 +111,7 @@ export default function Contact(): JSX.Element {
           },
           {
             "@type": "ContactPoint",
-            "email": "hello@cascadingxol.com",
+            "email": "info@cascadingxol.com",
             "contactType": "customer service",
             "areaServed": "PK"
           }
